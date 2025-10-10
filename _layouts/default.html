@@ -31,8 +31,8 @@
   <body class="theme">
     <!-- Top Bar -->
     <div class="navigation">
-      <!-- Title -->
       <div class="nav-left">
+        <!-- Title Toy -->
         {% if page.title %}
           {% assign nav_dir = '/' | append: page.dir | append: ' #' %}
         {% else %}
@@ -42,12 +42,14 @@
           <code>nickmuse.com&nbsp;~{{ nav_dir }}&nbsp;<span class="blinking">█</span></code>
         </a>
       </div>
-      <!-- Dark Mode -->
-      <div class="nav-right"><label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label></div>
-      <!-- Nav Link -->
-      <!--{% for item in site.data.settings.menu reversed %}<div class="nav-right"><a href="{{ site.github.url }}/{{ item.url }}">{{ item.name }}</a></div>{% endfor %}-->
-      <!-- Socials -->
-      {% for item in site.data.settings.social %}<div class="nav-right"><a href="{{ item.link }}" target="_blank"><i class="fab fa-{{ item.icon }}" aria-hidden="true" style="font-size:2.2rem;margin:.3rem;"></i></a></div>{% endfor %}
+      <div class="nav-right">
+        <!-- Nav Link -->
+        <!--{% for item in site.data.settings.menu reversed %}<a href="{{ site.github.url }}/{{ item.url }}">{{ item.name }}</a>{% endfor %}-->
+        <!-- Socials -->
+        {% for item in site.data.settings.social %}<a href="{{ item.link }}" target="_blank"><i class="fab fa-{{ item.icon }}" aria-hidden="true" style="font-size:2.2rem;margin:.3rem;"></i></a>{% endfor %}
+        <!-- Dark Mode -->
+        <label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label>
+      </div>
     </div>
     <!-- Bottom Content -->
     <div class="page-container">
